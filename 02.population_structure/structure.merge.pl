@@ -1,6 +1,6 @@
 #!/usr/bin/perl-w
-#######Cheng Hong########
-#######20181217##########
+
+
 use strict;
 use Data::Dumper;
 use List::Util qw(first max maxstr min minstr reduce shuffle sum);
@@ -14,11 +14,11 @@ open OUT,">$ARGV[3]" or die $!;
 #CAOC-BIH01 CAOC-BIH01 0 0 0 -9
 #CAOC-BIH02 CAOC-BIH02 0 0 0 -9
 #
-##IN2 结果文件 .Q文件列表
+##IN2 filelist of .Q with the lowest CV values
 #*2.Q 
 #*3.Q
 #
-#IN3 输出结果顺序,一行一个样本编号
+#IN3 the sample order of output file
 my $i=0;
 my %fam;
 while(<IN1>){
