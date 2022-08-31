@@ -4,20 +4,20 @@
 export pop=$1
 export chr=$2
 python ~/Script/vcf2Loter.py \
-        --vcffile sheep.chr${2}.imp.AR2.phase.vcf.gz \ #vcf should be imputated and phased 
-        --samplelist ~/poplists/${1}.samples \ #
-        --outprefix ${1}_${2}   #output npy file required by loter                                
+        --vcffile sheep.chr${chr}.imp.AR2.phase.vcf.gz \ #vcf should be imputated and phased 
+        --samplelist ~/poplists/${pop}.samples \ 
+        --outprefix ${pop}_${chr}   #output npy file required by loter                                
 
 		
 ##step 2 run loter 
 export chr=$1
-/stor9000/apps/users/NWSUAF/2012010954/Software/Anaconda4.4_py3.6/bin/loter_cli \
-        -r donor1_${1}.npy \
-           donor2_${1}.npy \
-           donor3_${1}.npy \
-           donor4_${1}.npy \
-           donor5_${1}.npy \
-           donor6_${1}.npy \
-        -a recipients_${1}.npy \
-        -f npy -o loter_${1}.npy -n 4 -v
+~/Software/Anaconda4.4_py3.6/bin/loter_cli \
+        -r donor1_${chr}.npy \
+           donor2_${chr}.npy \
+           donor3_${chr}.npy \
+           donor4_${chr}.npy \
+           donor5_${chr}.npy \
+           donor6_${chr}.npy \
+        -a recipients_${chr}.npy \
+        -f npy -o loter_${chr}.npy -n 4 -v
 		
