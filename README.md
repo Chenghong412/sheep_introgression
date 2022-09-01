@@ -19,24 +19,19 @@ The script Structure.sh was used to run ADMIXTURE with repetations, and the othe
 
 
 03.demographic_history
-The 
-The script 01.hete_count_window.pl was used for calculate the heterozygosity of each individual and each window in a vcf file.
-It should be noted that the vcf file used here must contain information of NON-SNP sites, which will be used as the background.
-
-
+The script Treemix.sh was used to infer admixture signals among different speicies or populations.
+The script Fastsimcoal2.sh was used to perform demographic inference under complex evolutionary scenarios.
 
 04.introgression
-The script 01.extract_cds.pl was used for arrange input file, which could be modified as you like.
-The script 02.codon_sta.pl was used to calculate the codon for each gene.
-The script 03.collect.pl was used to collect the result from previous step.
-The script 04.amino_usage.pl was used to compare the AA usage for different species.
-The script 05.codon_usage.pl was used to compare the codon usage for different species.
-The scripts 06.single_gene_AA.pl and 07.collect_AA_singleGene.pl were to compare the AA usage for each species in each gene.
+The script Dsuite.sh was used to do genome scale calculations of the D and f4-ratio statistics across all combinations of multiple species or populations directly using VCF file.
+The script Loter.sh was used to perform local ancestry inference for each SNP site. The VCF file should be phased and transformed to numpy format as Loter input.  
+The script Sliding_window_fd.sh was used to calculate the D statistic and f estimators in sliding windows across the genome. These results can be used to detect the most significant introgressed regions. 
+The script Population_dxy.sh  was used to calculate the genetic divergence (Dxy) in sliding windows across the genome. 
 
 05.haplotype_nework
-The script 01.basic_table.pl was used to calculate the Ka and Ks for each species in each GO.
-The script 02.fdr.rscript was used to perform FDR justification.
+The script input.prepare.sh was used to calculate the Ka and Ks for each species in each GO.
+The script network.R was used to construct the hapltype network using R pacakage pegas.
 
 06.GWAS
-The first script 00.prepare.sh was used to reconstruct ancestral states and perform simulations.
-The second script 01.convergence.pl was used to identify convergent mutation in each simulation.
+The script GWAS.sh was used to perform Genome-Wide Association Studies (GWAS). 
+The script Manhattan_QQ_plot.R was used to visualize the GWAS results using R package qqman.
