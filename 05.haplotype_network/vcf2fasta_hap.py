@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 import os
 import sys
 import click
@@ -12,9 +11,6 @@ def load_samples(varfile):
 
 
 def base2file(varfile, sample, region, nhap, regions_file, outfile):
-    """生成迭代器，每次返回80个碱基和一个\n
-    nhap是返回第几个haplotype, 1或者2
-    """
     if os.path.exists(outfile):
         with open(outfile, 'a') as f:
             f.write(f'\n>{sample}-{nhap}\n')
@@ -32,15 +28,13 @@ def base2file(varfile, sample, region, nhap, regions_file, outfile):
 
 
 @click.command()
-@click.option('--varfile', help='vcf,bcf文件')
-@click.option('--region', help='需要转的区域(如1:1-1000), 默认全部', default=None)
-@click.option('--regions-file', help='区域文件，默认None，覆盖--region', default=None)
-@click.option('--ploidy', help='倍性文件, tab分割, 一行一个个体. 如 sample1\\t2', default=None)
-@click.option('--outfile', help='输出fasta文件名')
+@click.option('--varfile', help='vcf,bcf file are required')
+@click.option('--region', help='start and end of the region', default=None)
+@click.option('--regions-file', help='one region per line', default=None)
+@click.option('--ploidy', help='one sample per line', default=None)
+@click.option('--outfile', help='file name of output')
 def main(varfile, region, regions_file, ploidy, outfile):
-    """
-    输入文件不能有indel
-    """
+
     if os.path.exists(outfile):
         sys.exit('outfile exists!')
     samples = load_samples(varfile)

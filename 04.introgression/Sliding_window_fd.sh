@@ -18,4 +18,6 @@ python ~/Software/SlidD/genomics_general-master/ABBABABAwindows.py \
         -P2 CN-PRT CNOA-PRT01,CNOA-PRT02,CNOA-PRT03,CNOA-PRT04,CNOA-PRT05,CNOA-PRT06,CNOA-PRT07,CNOA-PRT08,CNOA-PRT09,CNOA-PRT10 \
         -P3 Argali KGOM-AGL01,KGOM-AGL02,KGOM-AGL03,KGOM-AGL04,KGOM-AGL05,KGOM-AGL06,KGOM-AGL07,KGOM-AGL50,KGOM-AGL51,KGOM-AGL52,KGOM-AGL53,KGOM-AGL54 \
         -O Outgroup Goat \
-        -T 1 --minData 0.5 --writeFailedWindows ##-w window size, -s step size,-m Minumum good sites per window
+        -T 1 --minData 0.5 --writeFailedWindows 
+#-g Input genotypes file, -w Window size in bases, -s Step size for sliding window, -m Minumum good sites per window
+#-P1/P2/P3 Pop name and optionally sample names (separated by commas)
